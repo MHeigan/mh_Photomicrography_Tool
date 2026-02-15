@@ -17,7 +17,7 @@ Typical layout (your packaging may vary slightly):
 ---
 
 ## Download the latest release at:
-[http://anti-matter-3d.com/mh_tools/mh_Photomicrography_Tool_Win_x64_v1_3_4.zip](https://github.com/MHeigan/mh_Photomicrography_Tool/releases/tag/mh_Photomicrography_Tool_v1_3_4)
+https://github.com/MHeigan/mh_Photomicrography_Tool/releases/tag/mh_Photomicrography_Tool_v1_3_4
 
 ---
 
