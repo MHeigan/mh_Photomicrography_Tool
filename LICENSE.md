@@ -1,53 +1,28 @@
-Software License Agreement (CC BY-NC-ND 4.0)
-Attribution-NonCommercial-NoDerivatives 4.0 International
+# Licence — mh_macro_tools Photomicrography Tool
 
-This Software License Agreement ("Agreement") is between you (either an individual or a single
-entity, "Licensee") and “Martin P. Heigan” ("Licensor"). This Agreement applies to the software
-identified as “mh_tools Software and Utilities” ("Software"). By receiving, accessing, or using the
-Software, Licensee agrees to be bound by the terms of this Agreement.
+**Copyright © 2026 Martin P. Heigan. All rights reserved.**
 
-1. Grant of License
-Licensor grants Licensee a worldwide, non-exclusive, royalty-free license to use, share, and
-redistribute the Software in its original form, subject to the following conditions.
+This software is licensed under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International Public License (CC BY-NC-ND 4.0)**. This licence agreement is governed by and construed in accordance with the laws of the Republic of South Africa.
 
-2. Attribution
-Licensee must give appropriate credit to the Licensor, provide a link to the license, and indicate
-if changes were made. Attribution should be in the following form:
-"[Software Name] by [Licensor Name], licensed under CC BY-NC-ND 4.0"
+## You are free to
 
-3. NonCommercial
-Licensee may not use the Software for commercial purposes. Any use primarily intended for or
-directed toward commercial advantage or monetary compensation is prohibited.
+- **Share** — copy and redistribute the **unmodified** software in any medium or format, for **non-commercial** purposes, with attribution.
 
-4. NoDerivatives
-If Licensee remixes, transforms, or builds upon the Software, Licensee may not distribute the
-modified Software. Any distribution of adaptations of the Software in any form is prohibited
-without express permission from the Licensor.
+## Under the following terms
 
-5. Disclaimer of Warranties
-THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. THE
-ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE IS WITH
-LICENSEE.
+| Term | Meaning |
+|---|---|
+| **Attribution** | Give appropriate credit to Martin P. Heigan ([anti-matter-3d.com](https://anti-matter-3d.com/)), link to this licence, and indicate if changes were made — without suggesting endorsement. |
+| **NonCommercial** | You may not use the software for commercial purposes. |
+| **NoDerivatives** | If you remix, transform, or build upon the software, you may not distribute the modified material. |
+| **No additional restrictions** | You may not apply legal terms or technological measures that legally restrict others from doing anything the licence permits. |
 
-6. Limitation of Liability
-IN NO EVENT SHALL LICENSOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES, INCLUDING BUT NOT LIMITED TO
-LOST PROFITS, DATA LOSS, OR BUSINESS INTERRUPTION, ARISING OUT OF THE USE OR
-INABILITY TO USE THE SOFTWARE, EVEN IF LICENSOR HAS BEEN ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGES.
+## Notices
 
-7. Termination
-This License is effective until terminated. Licensee may terminate it at any time by destroying
-all copies of the Software. This License will terminate immediately without notice if Licensee
-fails to comply with any term of this Agreement.
+- No warranties are given. The software is provided "as is", and the licensor is not liable for any damages arising from its use, to the fullest extent permitted by law.
+- This is a human-readable summary of (and not a substitute for) the licence. Full legal text: <https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode>
+- No registration or licence key is required.
 
-8. Governing Law
-This Agreement is governed by the laws of the Republic of South Africa, without regard to
-conflict of law principles.
+## Commercial use / permissions
 
-To view the full legal code of Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
-International, visit https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.
-
-© 2025 Martin P. Heigan. Licensed under CC BY-NC-ND 4.0.
+For commercial licensing or any use beyond the terms above, request permission via the contact form: <https://anti-matter-3d.com/contact/>
