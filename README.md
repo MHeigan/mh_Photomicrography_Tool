@@ -1,131 +1,92 @@
-# mh_tools — Photomicrography Tool (Win x64) — v1.3.4
+# mh_macro_tools — Photomicrography Tool  `v2.0.0`
 
-A precision calculator for **photomicrography** and **macro-rail focus stacking** workflows. It computes **physical magnification**, **equivalent (crop-scaled) magnification**, **field of view**, **object-space pixel size**, **depth of field (DOF)**, and **recommended rail step size / frame count** for rigs ranging from **macro lenses** to **infinity microscope objectives**.
+A precision desktop calculator for photomicrography and macro-rail
+focus-stacking workflows: magnification, field of view, depth of field,
+diffraction, effective aperture, resolution, and stacking steps — for both
+camera-lens macro and infinity microscope-objective rigs.
 
----
+© 2026 Martin P. Heigan · 
+[anti-matter-3d.com](https://anti-matter-3d.com/tools/)
 
-## What’s included in the Windows ZIP release
+- - -
+## Features
 
-Typical layout (your packaging may vary slightly):
+- **Two optical models** — camera lens (macro approximation) and infinity
+  microscope objective (tube-lens scaled, NA-based).
+- **Magnification** — physical and equivalent (crop-scaled); first-order
+  extension term; objective tube-lens scaling against a 200 mm reference.
+- **Raynox support** — DCR-150 / DCR-250 modelled as the tube/projection lens,
+  with bellows placement guidance.
+- **Field & sampling** — field of view (mm/µm), object pixel size, sensor
+  diagonal, pixel coverage.
+- **Depth of field** — camera macro model with pupil correction, and an objective
+  diffraction + detector model scaled by imaging-medium refractive index.
+- **Diffraction & exposure** — effective f-number, light loss in stops, Airy
+  disk, and a selectable diffraction criterion (Strict / Standard / Practical)
+  with neutral, criterion-relative wording and a suggested **sweet-spot aperture**
+  .
+- **Resolution** — Rayleigh lateral resolution, its sensor-side projection, and a
+  Nyquist sampling verdict.
+- **Bidirectional focus stacking** — drive the calculation by depth of field,
+  step size, **or** frame count, with an effective-overlap read-out and focus-gap
+  warning.
+- **Live interactivity** — Auto-calculate (on by default) recomputes on every
+  change; the step and frame-count fields stay editable and editing any one
+  makes it the driver, so you can fiddle your way to a target.
+- **Stacking modes** — Motorised Rail, Manual Focus Steps, and Single Shot.
+- **Usability** — per-parameter tooltips, wavelength (UV/IR-aware) and
+  pupil-magnification inputs, JSON profile load/save (backward compatible), and
+  a Help → User Manual link.
 
-- `mh_Photomicrography_Tool_Win_x64_v1.3.4.exe` *(Windows build; onedir)*
-- `manuals/`
-- `mh_Photomicrography_Tool_User_Manual_v1.3.4.pdf` *(includes the full equations appendix)*
-- `README.md`
-- `README.txt`
-- `License_Agreement.pdf`
----
+## Distribution
 
-## Download the latest release at:
-https://github.com/MHeigan/mh_Photomicrography_Tool/releases/tag/mh_Photomicrography_Tool_v1_3_4
+The release ZIP contains a self-contained, signed Windows executable — no
+Python or runtime install required.
 
----
+```
+mh_Photomicrography_Tool_v2_0_0.zip
+├── mh_Photomicrography_Tool_Win_x64_v2_0_0.exe   (signed)
+├── _internal\                                     (runtime — do not modify)
+├── mh_Photomicrography_Tool_User_Manual.pdf
+├── License_Agreement.pdf
+└── README.txt
+```
+## System requirements
 
-## Install & Launch (Windows) 🚀
 
-1. **Extract** the ZIP to a normal folder (do not run from inside the ZIP).
-2. Run `mh_Photomicrography_Tool_Win_x64_v1.3.4.exe`.
+|Item            |Requirement                                |
+|----------------|-------------------------------------------|
+|Operating system|Windows 10 / 11 (64-bit)                   |
+|Runtime         |None — Python and all libraries are bundled|
+|Display         |1920 × 1080 or larger recommended          |
+|Internet        |Not required to run                        |
 
-No installer is required.
+## Files
 
----
 
-## Quick Start (most common workflow)
+|Type    |Format                                         |
+|--------|-----------------------------------------------|
+|Profiles|JSON — every input field saved/reloaded per rig|
+|Results |Plain-text export of calculated outputs        |
 
-**Default infinity-objective workflow**: **Nikon CFI-style 200 mm reference**, **PB‑6 bellows**, **Raynox DCR‑150** acting as the tube/projection lens.
+This is a calculator; it does not open or process image or video files.
 
-1. Set **Lens Type** → **Microscope Objective (Infinity)**
-2. Enter **Objective Magnification** (e.g. `10` for 10×)
-3. Enter **Objective NA** (e.g. `0.25`)
-4. Set **Reference Tube Focal Length** → `200 mm` *(default for Nikon CFI-type systems)*
-5. Set **Raynox Lens** → `DCR‑150`
-6. Set **Raynox Use Mode** → `As Tube Lens (changes magnification)`
-7. Confirm **sensor parameters** (defaults are provided; tweak as needed)
-8. Set **overlap** (e.g. `30%`) and **object depth/scale** (e.g. `3 mm`)
-9. Click **Calculate**
+## Licence
 
----
+Free for non-commercial use under **CC BY-NC-ND 4.0**, governed by the laws of
+South Africa. Use and share the unmodified tool with attribution for
+non-commercial purposes; no selling, no modified redistribution, no attribution
+removal. No registration or licence key is required. See 
+[License.md](License.md) / `License_Agreement.pdf` for full terms.
 
-## What the tool is modeling
+## Security
 
-### 1) Physical vs “Equivalent/Effective” magnification
-- **Physical magnification** is the magnification **at the sensor** and drives FoV, pixel scale, DOF, rail step size.
-- **Equivalent magnification** is a **display-only framing comparison**:
+The executable is code-signed (Certum OV, RFC-3161 timestamped) and was
+submitted to the Microsoft Defender (WDSI) file-submission service and then to
+VirusTotal prior to release. On first launch, Windows SmartScreen may prompt
+for a newly seen signed binary — choose **More info → Run anyway**.
 
-`M_equiv = M_phys × CropFactor`
+## More tools & contact
 
-Crop factor changes framing relative to full-frame; it does **not** change the physical optics at the sensor.
+- Tool suite — <https://anti-matter-3d.com/tools/>
 
-### 2) Infinity objectives: tube-lens scaling (core relationship)
-Infinity objectives are specified for a design/reference tube lens focal length `f_ref` (commonly **200 mm** for Nikon CFI and many Mitutoyo-style systems). If the objective is labeled `M_obj` (e.g. 10×), then physical magnification is:
-
-`M_phys = M_obj × (f_tube / f_ref)`
-
-Where `f_tube` is the focal length of the tube/projection lens actually used.
-
-### 3) Raynox DCR lenses in infinity-objective rigs (two roles)
-Raynox close-up lenses are specified in **diopters**. A practical approximation is:
-
-`f_raynox(mm) ≈ 1000 / D`
-
-So:
-- **DCR‑150 (~4.8D)** → `f_raynox ≈ 208.33 mm`
-- **DCR‑250 (~8D)** → `f_raynox ≈ 125.00 mm`
-
-The tool supports two real-world roles:
-
-**A) Raynox as the tube/projection lens (modeled)**  
-If you select **“As Tube Lens (changes magnification)”**, the tool uses `f_tube = f_raynox` inside the tube-lens scaling equation. This directly changes **physical magnification**.
-
-**B) Raynox as an additional relay/quality element (not modeled as magnification)**  
-If you already have a defined tube lens focal length (e.g. a real 200 mm tube lens), adding a Raynox may improve correction/quality — but any magnification change becomes spacing-dependent. The tool intentionally avoids “combining lenses” into a single unstable magnification formula in this case.
-
-### 4) Bellows / extension guidance (focus placement helper)
-When Raynox is used as the tube lens, practical assemblies often place it **roughly one focal length from the sensor**. The tool provides:
-- **Raynox Required Mount Extension (mm)** *(first-order placement guideline)*
-- **Raynox Extension Delta (mm)** *(your entered extension minus the guideline)*
-
-This is a **focus/placement helper**, not a magnification equation.
-
----
-
-## Macro rail & focus stacking recommendations
-
-The tool uses DOF to recommend rail steps:
-
-- `Step size (mm) = DOF × (1 − overlap)`
-- `Recommended frames = ceil(object depth / step size)`
-
-For objectives, DOF is modeled using a diffraction term plus a detector term (CoC factor × pixel pitch). The full derivation and equations are included in the **User Manual PDF**.
-
----
-
-## Profiles (Load / Save)
-
-- **Save Profile** writes all input fields to JSON.
-- **Load Profile** restores them.
-
-Recommended practice:
-- Create named profiles per rig (example: `D500_CFI10x_PB6_DCR150.json`).
-- Keep sensor parameters inside the profile so FoV/pixel scale remain consistent.
-
----
-
-## Troubleshooting
-
-- **Results show dashes**: ensure required inputs for the selected mode exist (NA for objectives; f‑stop for camera lenses).
-- **Unexpected objective magnification**: verify whether Raynox is set to act as the tube lens, and confirm tube lens focal length.
-- **Rail steps look extreme**: check overlap %, pixel pitch, CoC factor, and NA; objective DOF can be extremely small at higher NA.
-
----
-
-## Licensing 📜
-
-This software is licensed under: **CC BY‑NC‑ND 4.0**  
-For a plain-English summary, see: `License_Agreement.pdf`
-
----
-
-## Changelog (summary)
-
-- **v1.3.4** — Results panel moved to the right for 1080p usability; refined window sizing; stable default profile for the Nikon CFI 200 mm + DCR‑150 workflow; objective f‑stop disabled in objective mode; Raynox extension guidance aligned with tube assemblies.
