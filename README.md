@@ -110,4 +110,3 @@ may prompt for a newly seen signed binary - choose **More info -> Run anyway**.
 ## More tools & contact
 
 - Tool suite - <https://anti-matter-3d.com/tools/>
-- Contact - <https://anti-matter-3d.com/contact/>
