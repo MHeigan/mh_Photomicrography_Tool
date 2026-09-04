@@ -1,68 +1,68 @@
-# mh_macro_tools â€” Photomicrography Tool  `v2.0.0`
+# mh_macro_tools - Photomicrography Tool  `v2.0.0`
 
 A precision desktop calculator for photomicrography and macro-rail
 focus-stacking workflows: magnification, field of view, depth of field,
-diffraction, effective aperture, resolution, and stacking steps â€” for both
+diffraction, effective aperture, resolution, and stacking steps - for both
 camera-lens macro and infinity microscope-objective rigs.
 
-Â© 2026 Martin P. Heigan Â· [anti-matter-3d.com](https://anti-matter-3d.com/tools/)
+(c) 2026 Martin P. Heigan - [anti-matter-3d.com](https://anti-matter-3d.com/tools/)
 
 ---
 
 ## Download
 
-- **Direct download** â€” <https://anti-matter-3d.com/mh_tools/mh_Photomicrography_Tool_Win_x64_v2_0.zip>
-- **Tools page** â€” <https://anti-matter-3d.com/tools/>
-- **GitHub release** â€” <https://github.com/MHeigan/mh_Photomicrography_Tool/releases/tag/mh_Photomicrography_Tool_v2_0_0>
+- **Direct download** - <https://anti-matter-3d.com/mh_tools/mh_Photomicrography_Tool_Win_x64_v2_0.zip>
+- **Tools page** - <https://anti-matter-3d.com/tools/>
+- **GitHub release** - <https://github.com/MHeigan/mh_Photomicrography_Tool/releases/tag/mh_Photomicrography_Tool_v2_0_0>
   (or the [latest release](https://github.com/MHeigan/mh_Photomicrography_Tool/releases/latest))
 
-No Python or runtime install is required â€” extract and run.
+No Python or runtime install is required - extract and run.
 
 ## Features
 
-- **Two optical models** â€” camera lens (macro approximation) and infinity
+- **Two optical models** - camera lens (macro approximation) and infinity
   microscope objective (tube-lens scaled, NA-based).
-- **Magnification** â€” physical and equivalent (crop-scaled); first-order
+- **Magnification** - physical and equivalent (crop-scaled); first-order
   extension term; objective tube-lens scaling against a 200 mm reference.
-- **Raynox support** â€” DCR-150 / DCR-250 modelled as the tube/projection lens,
+- **Raynox support** - DCR-150 / DCR-250 modelled as the tube/projection lens,
   with bellows placement guidance.
-- **Field & sampling** â€” field of view (mm/Âµm), object pixel size, sensor
+- **Field & sampling** - field of view (mm/um), object pixel size, sensor
   diagonal, pixel coverage.
-- **Depth of field** â€” camera macro model with pupil correction, and an objective
+- **Depth of field** - camera macro model with pupil correction, and an objective
   diffraction + detector model scaled by imaging-medium refractive index.
-- **Diffraction & exposure** â€” effective f-number, light loss in stops, Airy
+- **Diffraction & exposure** - effective f-number, light loss in stops, Airy
   disk, and a selectable diffraction criterion (Strict / Standard / Practical)
   with neutral, criterion-relative wording and a suggested **sweet-spot aperture**.
-- **Resolution** â€” Rayleigh lateral resolution, its sensor-side projection, and a
+- **Resolution** - Rayleigh lateral resolution, its sensor-side projection, and a
   Nyquist sampling verdict.
-- **Bidirectional focus stacking** â€” drive the calculation by depth of field,
+- **Bidirectional focus stacking** - drive the calculation by depth of field,
   step size, **or** frame count, with an effective-overlap read-out and focus-gap
   warning.
-- **Live interactivity** â€” Auto-calculate (on by default) recomputes on every
+- **Live interactivity** - Auto-calculate (on by default) recomputes on every
   change; the step and frame-count fields stay editable and editing any one
   makes it the driver, so you can fiddle your way to a target.
-- **Stacking modes** â€” Motorised Rail, Manual Focus Steps, and Single Shot.
-- **Usability** â€” per-parameter tooltips, wavelength (UV/IR-aware) and
+- **Stacking modes** - Motorised Rail, Manual Focus Steps, and Single Shot.
+- **Usability** - per-parameter tooltips, wavelength (UV/IR-aware) and
   pupil-magnification inputs, JSON profile load/save (backward compatible), and
-  a Help â†’ User Manual link.
+  a Help -> User Manual link.
 
 ## Distribution
 
-The release ZIP contains a self-contained, signed Windows executable â€” no
+The release ZIP contains a self-contained, signed Windows executable - no
 Python or runtime install required.
 
 ```
 mh_Photomicrography_Tool_v2_0_0.zip
-â”œâ”€â”€ mh_Photomicrography_Tool_Win_x64_v2_0_0.exe   (signed)
-â”œâ”€â”€ _internal\                                     (runtime â€” do not modify)
-â”œâ”€â”€ mh_Photomicrography_Tool_User_Manual.pdf
-â”œâ”€â”€ License.txt
-â”œâ”€â”€ License_Agreement.pdf
-â”œâ”€â”€ README.txt
-â”œâ”€â”€ release_info.txt                              (release metadata)
-â”œâ”€â”€ manifest.json                                 (content manifest)
-â”œâ”€â”€ release_manifest.cat                          (signed Authenticode catalog)
-â””â”€â”€ SHA256SUMS.txt                                (SHA-256 checksums)
++-- mh_Photomicrography_Tool_Win_x64_v2_0_0.exe   (signed)
++-- _internal\                                     (runtime - do not modify)
++-- mh_Photomicrography_Tool_User_Manual.pdf
++-- License.txt
++-- License_Agreement.pdf
++-- README.txt
++-- release_info.txt                              (release metadata)
++-- manifest.json                                 (content manifest)
++-- release_manifest.cat                          (signed Authenticode catalog)
+\-- SHA256SUMS.txt                                (SHA-256 checksums)
 ```
 
 ## System requirements
@@ -70,15 +70,15 @@ mh_Photomicrography_Tool_v2_0_0.zip
 | Item | Requirement |
 |----------------|-------------------------------------------|
 | Operating system | Windows 10 / 11 (64-bit) |
-| Runtime | None â€” Python and all libraries are bundled |
-| Display | 1920 Ã— 1080 or larger recommended |
+| Runtime | None - Python and all libraries are bundled |
+| Display | 1920 x 1080 or larger recommended |
 | Internet | Not required to run |
 
 ## Files
 
 | Type | Format |
 |--------|-----------------------------------------------|
-| Profiles | JSON â€” every input field saved/reloaded per rig |
+| Profiles | JSON - every input field saved/reloaded per rig |
 | Results | Plain-text export of calculated outputs |
 
 This is a calculator; it does not open or process image or video files.
@@ -99,14 +99,15 @@ Authenticode catalog (`release_manifest.cat`), a content manifest
 (`manifest.json`), and SHA-256 checksums (`SHA256SUMS.txt`) so you can confirm
 the download is intact and authentic before running:
 
-- Confirm the exe's digital signature (right-click â†’ **Properties â†’ Digital
+- Confirm the exe's digital signature (right-click -> **Properties -> Digital
   Signatures**) shows **Martin P. Heigan**.
 - Verify the archive contents against `SHA256SUMS.txt`.
 
 The build was submitted to the Microsoft Defender (WDSI) file-submission service
 and then to VirusTotal prior to release. On first launch, Windows SmartScreen
-may prompt for a newly seen signed binary â€” choose **More info â†’ Run anyway**.
+may prompt for a newly seen signed binary - choose **More info -> Run anyway**.
 
 ## More tools & contact
 
-- Tool suite â€” <https://anti-matter-3d.com/tools/>
+- Tool suite - <https://anti-matter-3d.com/tools/>
+- Contact - <https://anti-matter-3d.com/contact/>
